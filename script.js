@@ -18,7 +18,10 @@ const getNewPositions = (event, moveAsCursor = false) => {
 const updateMovement = (event) => {
   const positions = getNewPositions(event, true);
   for (var i = 0; i < layers.length; i++) {
-    const speed = Number(layers[i].dataset.layerSpeed);
+    const speed = (() => {
+      if (!layers[i].dataset.layerSpeed) return .5;
+      return Number(layers[i].dataset.layerSpeed);
+    })();
     layers[i].style.webkitTransform = `translate(${positions.x * speed}px, ${positions.y * speed / 2}px)`;
   }
 }
