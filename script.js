@@ -1,7 +1,7 @@
 parallaxBox = document.getElementById('parallaxBox'),
 layers = parallaxBox.getElementsByClassName('layer');
 
-const getNewPositions = (event, moveAsCursor = false) => {
+const getNewPosition = (event, moveAsCursor = false) => {
   const { clientX, clientY } = event;
   const calcAxis = (axisValue) => (window.innerWidth / 2 - axisValue - parallaxBox.offsetLeft) / 10;
   const newPositions = {
@@ -16,14 +16,13 @@ const getNewPositions = (event, moveAsCursor = false) => {
 }
 
 const updateMovement = (event) => {
-  const positions = getNewPositions(event, true);
-  for (var i = 0; i < layers.length; i++) {
-    const speed = (() => {
-      if (!layers[i].dataset.layerSpeed) return .5;
-      return Number(layers[i].dataset.layerSpeed);
-    })();
-    layers[i].style.webkitTransform = `translate(${positions.x * speed}px, ${positions.y * speed / 2}px)`;
-  }
+  const position = getNewPosition(event, true);
+  
+  [...layers].forEach(layer => {
+    const { dataset: { layerSpeed } } = layer;
+    const speed = layerSpeed ? Number(layerSpeed) : .5;
+    layer.style.webkitTransform = `translate(${position.x * speed}px, ${position.y * speed / 2}px)`;
+  })
 }
 
 parallaxBox.onmousemove = updateMovement;
