@@ -1,5 +1,5 @@
 parallaxBox = document.getElementById('parallaxBox'),
-layers = parallaxBox.getElementsByClassName('layer');
+layers = [...parallaxBox.getElementsByClassName('layer')];
 
 const getNewPosition = (event, moveAsCursor = false) => {
   const { clientX, clientY } = event;
@@ -18,7 +18,7 @@ const getNewPosition = (event, moveAsCursor = false) => {
 const updateMovement = (event) => {
   const position = getNewPosition(event, true);
   
-  [...layers].forEach(layer => {
+  layers.forEach(layer => {
     const { dataset: { layerSpeed } } = layer;
     const speed = layerSpeed ? Number(layerSpeed) : .5;
     layer.style.webkitTransform = `translate(${position.x * speed}px, ${position.y * speed / 2}px)`;
