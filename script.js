@@ -1,4 +1,4 @@
-const parallaxBox = document.getElementById('parallaxBox'),
+const parallaxBox = document.getElementById('parallaxBox');
 const layers = [...parallaxBox.getElementsByClassName('layer')];
 
 const getNewPosition = (event, moveAsCursor = false) => {
