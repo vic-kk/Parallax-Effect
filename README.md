@@ -1,5 +1,5 @@
 # Parallax effect
-_Copy from [Codepen.io](https://codepen.io/karasev/pen/OgZwdr)_
+_Copy from my [Codepen.io](https://codepen.io/karasev/pen/OgZwdr)_
 
 **Parallax effect in VanillaJS**
 
