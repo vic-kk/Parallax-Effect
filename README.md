@@ -32,7 +32,7 @@ set `data-layer-speed` attribute as parameter for movement speed as you want. De
 >
 <img
   class="layer [...]"
-  <!-- Without attribute. Default speed = 0.5 -->
+  <!-- Without attribute it still valid and works. Default speed = 0.5 -->
   ...
 >
 ...
