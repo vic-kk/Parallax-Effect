@@ -10,11 +10,11 @@ just add a block/element with class `.layer` as a layer in `#parallaxBox` block 
 ```html
 <div id="parallaxBox">
   ...
-  <img
+  <div
     class="layer [...]"
     data-layer-speed='0.2'
     ...
-  >
+  ><!-- all content as layer --></div>
   ...
 </div>
 ```
