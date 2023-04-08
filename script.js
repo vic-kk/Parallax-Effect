@@ -3,10 +3,11 @@ const layers = [...parallaxBox.getElementsByClassName('layer')];
 
 const getMovePosition = (event, moveAsCursor = false) => {
   const { clientX, clientY } = event;
-  const axisMovement = (axisValue) => (window.innerWidth / 2 - axisValue - parallaxBox.offsetLeft) / 10;
+  const { innerWidth, innerHeight} = window;
+  const axisMovement = (axisValue, axisLenght) => (axisLenght / 2 - axisValue) / 10;
   const newPositions = {
-    x: axisMovement(clientX),
-    y: axisMovement(clientY) / 2,
+    x: axisMovement(clientX, innerWidth),
+    y: axisMovement(clientY, innerHeight) / 2,
   }
   if (moveAsCursor) return {
     x: -newPositions.x,
