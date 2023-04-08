@@ -14,7 +14,7 @@ just add a block/element with class `.layer` as a layer in `#parallaxBox` block 
     class="layer [...]"
     data-layer-speed='0.2'
     ...
-  ><!-- all content as layer --></div>
+  ><!-- all content moves as sinlge layer --></div>
   ...
 </div>
 ```
@@ -28,6 +28,11 @@ set `data-layer-speed` attribute as parameter for movement speed as you want. De
 <img
   class="layer [...]"
   data-layer-speed='1'
+  ...
+>
+<img
+  class="layer [...]"
+  <!-- Without attribute. Default speed = 0.5 -->
   ...
 >
 ...
