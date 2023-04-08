@@ -17,7 +17,6 @@ const getMovePosition = (event, moveAsCursor = false) => {
 
 const updateMovement = (event) => {
   const move = getMovePosition(event, true);
-  
   layers.forEach(layer => {
     const { dataset: { layerSpeed } } = layer;
     const speed = layerSpeed ? Number(layerSpeed) : .5;
